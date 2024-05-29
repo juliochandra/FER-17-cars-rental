@@ -1,0 +1,49 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+main {
+  height: 2000px;
+}
+
+.bg-body-custom {
+  background-color: #f1f3ff;
+}
+
+.btn-primary:hover {
+  background-color: #f1f3ff;
+  color: var(--bs-primary);
+}
+
+.navbar-sticky {
+  background-color: #f1f3ff;
+  opacity: 0.95;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease-in-out;
+}
+
+.btn-success {
+  background-color: var(--bs-success);
+  color: #f1f3ff;
+}
+
+.btn-success:hover {
+  background-color: #f1f3ff;
+  color: var(--bs-success);
+}
+
+.card-icon-container {
+  display: flex;
+  align-items: center;
+}
+
+.card-icon {
+  display: flex;
+  align-items: center;
+}
+
+.accordionFaqItem {
+  opacity: 0.99;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease-in-out;
+}
