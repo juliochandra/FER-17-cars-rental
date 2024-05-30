@@ -16,7 +16,7 @@ export const apiSlice = createApi({
     }),
     getCarById: builder.query({
       query: (id) => ({
-        url: `customer/v2/car/${id}`,
+        url: `customer/car/${id}`,
       }),
       providesTags: ["Cars"],
     }),

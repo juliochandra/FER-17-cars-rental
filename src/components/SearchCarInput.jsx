@@ -32,6 +32,7 @@ const SearchCarInput = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setPageSize(20);
     setPage(1);
   };
 
@@ -39,7 +40,7 @@ const SearchCarInput = () => {
     setPage(newPage);
   };
 
-  console.log(cars);
+  //   console.log(cars);
 
   return (
     <>
@@ -79,9 +80,9 @@ const SearchCarInput = () => {
                             onChange={(e) => setCategory(e.target.value)}
                           >
                             <option value="">Pilih Kategori</option>
-                            <option value={"small"}>Small</option>
-                            <option value={"medium"}>Medium</option>
-                            <option value={"large"}>Large</option>
+                            <option value={"small"}>2 - 4 Orang</option>
+                            <option value={"medium"}>4 - 6 Orang</option>
+                            <option value={"large"}>6 - 8 Orang</option>
                           </select>
                         </div>
                       </div>
