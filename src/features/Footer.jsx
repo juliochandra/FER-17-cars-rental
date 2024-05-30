@@ -8,6 +8,25 @@ import {
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const socialMediaData = [
+    { icon: <FaFacebook />, platform: "Facebook" },
+    { icon: <FaInstagram />, platform: "Instagram" },
+    { icon: <FaTwitter />, platform: "Twitter" },
+    { icon: <FaRegEnvelope />, platform: "Email" },
+    { icon: <FaTwitch />, platform: "Twitch" },
+  ];
+
+  const renderSocialMediaIcons = socialMediaData.map((data, index) => {
+    return (
+      <i
+        key={index}
+        className="bg-primary p-2 me-3 rounded-circle align-item-center text-white"
+        title="{data.platform}"
+      >
+        {data.icon}
+      </i>
+    );
+  });
   return (
     <section id="footer">
       <div className="container my-7">
@@ -26,28 +45,12 @@ const Footer = () => {
           <div className="col-md-3 mb-3">
             <h6>Connect with us</h6>
             <div className="row ">
-              <div className="col-12">
-                <i className="bg-primary p-2 me-3 rounded-circle align-item-center">
-                  <FaFacebook className="text-white my-3" />
-                </i>
-                <i className="bg-primary p-2 me-3 rounded-circle align-item-center">
-                  <FaInstagram className="text-white my-3" />
-                </i>
-                <i className="bg-primary p-2 me-3 rounded-circle align-item-center">
-                  <FaTwitter className="text-white my-3" />
-                </i>
-                <i className="bg-primary p-2 me-3 rounded-circle align-item-center">
-                  <FaRegEnvelope className="text-white my-3" />
-                </i>
-                <i className="bg-primary p-2 me-3 rounded-circle align-item-center">
-                  <FaTwitch className="text-white my-3" />
-                </i>
-              </div>
+              <div className="col-12">{renderSocialMediaIcons}</div>
             </div>
           </div>
           <div className="col-md-3">
             <h6>Copyright Binar 2024</h6>
-            <Link to="/cars" className="btn btn-primary fw-bold">
+            <Link to="/car" className="btn btn-primary fw-bold">
               BINAR
             </Link>
           </div>
