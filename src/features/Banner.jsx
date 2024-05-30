@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
-
-const Banner = () => {
+// eslint-disable-next-line react/prop-types
+const Banner = ({ children }) => {
   return (
     <section id="banner" className="container-fluid bg-body-custom pt-7">
       <div className="container">
@@ -12,9 +11,7 @@ const Banner = () => {
               kualitas terbaik dengan harga terjangkau. Selalu siap melayani
               kebutuhanmu untuk sewa mobil selama 24 jam.
             </p>
-            <Link to="/cars" className="btn btn-success fw-bold">
-              Mulai Sewa Mobil
-            </Link>
+            {children && children}
           </div>
           <div className="col-md-6">
             <img

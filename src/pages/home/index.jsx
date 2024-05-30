@@ -1,3 +1,4 @@
+import SearchCarButton from "../../components/SearchCarButton";
 import Banner from "../../features/Banner";
 import CtaBanner from "../../features/CtaBanner";
 import Faq from "../../features/Faq";
@@ -8,7 +9,9 @@ import WhyUs from "../../features/WhyUs";
 const Home = () => {
   return (
     <>
-      <Banner />
+      <Banner>
+        <SearchCarButton />
+      </Banner>
       <OurServices />
       <WhyUs />
       <Testimonial />

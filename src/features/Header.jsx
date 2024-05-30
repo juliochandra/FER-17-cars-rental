@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   useEffect(() => {
@@ -22,11 +22,14 @@ const Header = () => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg fixed-top bg-body-custom">
+      <nav
+        id="navbar"
+        className="navbar navbar-expand-lg fixed-top bg-body-custom"
+      >
         <div className="container">
-          <NavLink to={"/"} className="navbar-brand btn btn-primary fw-bold">
+          <Link to="/" className="btn btn-primary fw-bold">
             Cars-Rental
-          </NavLink>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -51,12 +54,12 @@ const Header = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a href={"#testimoni"} className="nav-link">
+                <a href={"#Testimonial"} className="nav-link">
                   Testimonial
                 </a>
               </li>
               <li className="nav-item">
-                <a href={"#faq"} className="nav-link">
+                <a href={"#FAQ"} className="nav-link">
                   FAQ
                 </a>
               </li>
