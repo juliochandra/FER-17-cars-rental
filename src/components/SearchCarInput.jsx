@@ -17,10 +17,11 @@ const SearchCarInput = () => {
     setMaxPrice(max);
   };
 
-  const DEFAULT_IMAGE =
-    "https://images.tokopedia.net/img/KRMmCm/2024/2/7/dd3c8623-bf0e-4283-a8c7-4a6cb9d188c2.jpg";
-
-  const { data: cars } = useGetCarsQuery({
+  const {
+    data: cars,
+    // isLoading,
+    // error,
+  } = useGetCarsQuery({
     name,
     category,
     isRented,
@@ -158,16 +159,7 @@ const SearchCarInput = () => {
         </div>
       </section>
 
-      <ShowCars
-        cars={{
-          ...cars,
-          cars: cars?.cars.map((car) => ({
-            ...car,
-            image: car.image || DEFAULT_IMAGE, // Add default image
-            name: car.name || "No name",
-          })),
-        }}
-      />
+      <ShowCars cars={cars} />
 
       <section id="pagination">
         <div className="container">
