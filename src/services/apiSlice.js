@@ -12,7 +12,9 @@ export const apiSlice = createApi({
         url: "customer/v2/car",
         params: { ...params },
       }),
-      transformResponse: (response) => {
+      transformResponse: async (response) => {
+        await new Promise((resolve) => setTimeout(resolve, 1500));
+
         // console.log(response);
         const transformedCars = response.cars.map((car) => ({
           id: car.id,
@@ -21,7 +23,7 @@ export const apiSlice = createApi({
           finish_rent_at: car.finish_rent_at,
           image:
             car.image ||
-            "https://images.tokopedia.net/img/KRMmCm/2024/2/7/dd3c8623-bf0e-4283-a8c7-4a6cb9d188c2.jpg",
+            `https://loremflickr.com/200/100/car/?random=${car.id}`,
           name: car.name || "Mobil",
           price: car.price || 100000,
           start_rent_at: car.start_rent_at,
@@ -39,14 +41,16 @@ export const apiSlice = createApi({
       query: (id) => ({
         url: `customer/car/${id}`,
       }),
-      transformResponse: (response) => {
+      transformResponse: async (response) => {
+        await new Promise((resolve) => setTimeout(resolve, 1500));
+
         // console.log(response);
         const transformedCars = {
           ...response,
           category: response.category || "Medium",
           image:
             response.image ||
-            "https://images.tokopedia.net/img/KRMmCm/2024/2/7/dd3c8623-bf0e-4283-a8c7-4a6cb9d188c2.jpg",
+            `https://loremflickr.com/200/100/car/?random=${response.id}`,
           start_rent_at: response.start_rent_at,
           finish_rent_at: response.finish_rent_at,
           status: response.status,

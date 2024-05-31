@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useGetCarsQuery } from "../services/apiSlice";
 import ShowCars from "./ShowCars";
+import ShowCarsLoader from "./ShowCarsLoader";
 
 const SearchCarInput = () => {
   const [name, setName] = useState();
@@ -19,7 +20,7 @@ const SearchCarInput = () => {
 
   const {
     data: cars,
-    // isLoading,
+    isLoading,
     // error,
   } = useGetCarsQuery({
     name,
@@ -160,6 +161,7 @@ const SearchCarInput = () => {
       </section>
 
       <ShowCars cars={cars} />
+      {isLoading && <ShowCarsLoader />}
 
       <section id="pagination">
         <div className="container">
